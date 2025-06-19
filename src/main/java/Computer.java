@@ -10,7 +10,7 @@ public class Computer {
         return this.computerInHand;
     }
 
-    public void setPlayerInHand(){
+    public void setComputerInHand(){
         System.out.println("コンピュータの手をランダムに選びます");
         double random = Math.random() * 3;
         if (random <= 1){
