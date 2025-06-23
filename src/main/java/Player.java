@@ -18,22 +18,23 @@ public class Player {
     }
 
     public void setPlayerName(){
-        System.out.println("プレイヤー名前を入力して下さい");
+        System.out.println("プレイヤー名をキーボードで入力して下さい");
         this.playerName = new Scanner(System.in).nextLine();
     }
 
-    public void setPlayerInHand(){
-        System.out.println("プレイヤーの手を選びます");
+    public void setPlayerInHand(String playerName){
+        System.out.println(playerName + "さんの手を選びます");
         double random = Math.random() * 3;
         if (random <= 1){
             this.playerInHand = STONE;
-            System.out.println("プレイヤーの手は「グー」です");
+            System.out.println(playerName + "さんの手は「グー」です");
         }else if (random > 1 && random <= 2){
             this.playerInHand = SCISSOR;
-            System.out.println("プレイヤーの手は「チョキ」です");
+            System.out.println(playerName + "さんの手は「チョキ」です");
         }else {
             this.playerInHand = PAPER;
-            System.out.println("プレイヤーの手は「パー」です");
+            System.out.println(playerName + "さんの手は「パー」です");
         }
+        System.out.println(" ");
     }
 }

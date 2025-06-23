@@ -20,5 +20,6 @@ public class Computer {
         }else {
             this.computerInHand = PAPER;
         }
+        System.out.println(" ");
     }
 }

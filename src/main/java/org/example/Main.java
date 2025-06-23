@@ -5,23 +5,34 @@ public class Main {
         Computer c = new Computer();
         Facilitator f = new Facilitator();
 
-        f.startGame();
-        p.setPlayerName();
-        String playerName = p.getPlayerName();
+        try {
+            f.startGame();
+            Thread.sleep(2000);
 
-        p.setPlayerInHand();
-        c.setComputerInHand();
+            p.setPlayerName();
+            String playerName = p.getPlayerName();
+            Thread.sleep(2000);
 
-        int playerInHand = p.getPlayerInHand();
-        int computerInHand = c.getComputerInHand();
+            p.setPlayerInHand(playerName);
+            Thread.sleep(2000);
+            c.setComputerInHand();
+            Thread.sleep(2000);
 
-        String Winner = f.getWinner(playerInHand,computerInHand);
-        String playerInHandString = f.changeIntToString(playerInHand);
-        String computerInHandString = f.changeIntToString(computerInHand);
+            int playerInHand = p.getPlayerInHand();
+            int computerInHand = c.getComputerInHand();
 
-        f.showWinner(playerName, playerInHandString, computerInHandString,Winner);
+            String Winner = f.getWinner(playerInHand,computerInHand);
+            String playerInHandString = f.changeIntToString(playerInHand);
+            String computerInHandString = f.changeIntToString(computerInHand);
 
-        f.endGame();
+            f.showWinner(playerName, playerInHandString, computerInHandString,Winner);
+            Thread.sleep(3000);
+
+            f.endGame();
+        } catch (InterruptedException e) {
+            System.out.println("例外が発生しました");
+            System.out.println("プログラムを終了します");
+        }
 
 
     }

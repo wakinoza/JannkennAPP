@@ -3,9 +3,11 @@ public class Facilitator {
         System.out.println("【じゃんけんゲーム】");
         System.out.println("これより、じゃんけんゲームを開始します");
         System.out.println("勝負は１回、手はランダムに選ばれます");
+        System.out.println(" ");
     }
 
     public void endGame(){
+        System.out.println(" ");
         System.out.println("じゃんけんゲームを終了します");
     }
 
@@ -21,6 +23,13 @@ public class Facilitator {
 
     public void showWinner(String playerName,String playerInHand, String computerInHand, String winner) {
         System.out.println(playerName + "さんとコンピュータとのじゃんけんを始めます");
+        System.out.println(" ");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            System.out.println("例外が発生しました");
+            System.out.println("プログラムを終了します");
+        }
         System.out.println(playerName + "さん：" + playerInHand + " VS コンピュータ：" + computerInHand);
         if (winner.equals("player")){
             System.out.println("勝者は、" + playerName + "さんです!!");
@@ -28,7 +37,7 @@ public class Facilitator {
         }else if (winner.equals("computer")){
             System.out.println("残念！ 勝者は、コンピュータです");
         } else {
-            System.out.println("残念！ 「あいこ」のため、引き分けです");
+            System.out.println("「あいこ」のため、引き分けです");
         }
     }
 
