@@ -2,7 +2,7 @@ public class Facilitator {
     public void startGame(){
         System.out.println("【じゃんけんゲーム】");
         System.out.println("これより、じゃんけんゲームを開始します");
-        System.out.println("勝負は１回、手はランダムに選ばれます");
+        System.out.println("１回勝負で、勝者が決まります");
         System.out.println(" ");
     }
 

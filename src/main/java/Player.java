@@ -23,18 +23,36 @@ public class Player {
     }
 
     public void setPlayerInHand(String playerName){
-        System.out.println(playerName + "さんの手を選びます");
-        double random = Math.random() * 3;
-        if (random <= 1){
-            this.playerInHand = STONE;
-            System.out.println(playerName + "さんの手は「グー」です");
-        }else if (random > 1 && random <= 2){
-            this.playerInHand = SCISSOR;
-            System.out.println(playerName + "さんの手は「チョキ」です");
-        }else {
-            this.playerInHand = PAPER;
-            System.out.println(playerName + "さんの手は「パー」です");
+        System.out.println(playerName + "さんの手を選んでください");
+        System.out.println("「グー」を選ぶ場合は、数字の「1」を入力してください");
+        System.out.println("「チョキ」を選ぶ場合は、数字の「2」を入力してください");
+        System.out.println("「パー」を選ぶ場合は、数字の「3」を入力してください");
+        System.out.println("それ以外の数字は入力できません");
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            if (scanner.hasNextInt()) {
+                 int number = scanner.nextInt();
+                if (number == 1) {
+                    System.out.println(playerName + "さんは「グー」を選びました");
+                    this.playerInHand = STONE;
+                    break;
+                } else if (number == 2) {
+                    System.out.println(playerName + "さんは「チョキ」を選びました");
+                    this.playerInHand = SCISSOR;
+                    break;
+                } else if(number == 3) {
+                    System.out.println(playerName + "さんは「パー」を選びました");
+                    this.playerInHand = PAPER;
+                    break;
+                } else {
+                    System.out.println("入力エラー: 「1」,「2」,「3」のどれかを入力してください");
+                }
+            } else {
+                System.out.println("エラー: 「1」,「2」,「3」のどれかを入力してください");
+                scanner.next();
+            }
         }
-        System.out.println(" ");
+        scanner.close();
     }
 }
